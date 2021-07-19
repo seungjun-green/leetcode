@@ -1,6 +1,11 @@
 """
 Leet code Single Number Solution
 Problem Link: https://leetcode.com/problems/single-number/
+
+Description: 
+1. create an Dictionary(keY: element, value: muber of the element in the list) usinf defaultdict(int)
+2. iterate over the dictionary untill we found the value of the key is 1
+
 """
 
 from collections import defaultdict

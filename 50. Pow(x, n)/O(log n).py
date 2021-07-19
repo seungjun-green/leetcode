@@ -19,14 +19,13 @@ class Solution:
         return self.fastPower(x, n)
     
     def fastPower(self, x, n):
-        #base case
-        if (n == 0):
+        if (n == 0):  #base case
             return 1.0
-        
-        a = self.fastPower(x, n // 2)
-
-        if n % 2 == 0:
-            return  a * a
         else:
-            return a * a * x
+            a = self.fastPower(x, n // 2)
+
+            if n % 2 == 0:
+                return  a * a
+            else:
+                return a * a * x
         

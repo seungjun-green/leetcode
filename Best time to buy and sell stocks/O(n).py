@@ -9,7 +9,6 @@ And in same iteration, update the maxProfit by comparing maxProfit and todayPric
 After iteration return the maxProfit
 """
 
-
 class Solution:
     def maxProfit(self, prices):
         minPrice = 999999999
@@ -22,3 +21,9 @@ class Solution:
                 
                 
         return maxProfit
+    
+    
+    
+    
+    
+    

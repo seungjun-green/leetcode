@@ -23,6 +23,14 @@ Get the complement and check whether then search dict whetehr the complement(key
 
 
 
+|---------------------------------------------------------------------|
+| Time Complexity of Searching Key in Dictionary is O(1), constant time. 
+|
+|    ex.) if key in dict:
+|          do stuff
+|
+|---------------------------------------------------------------------|
+
 """
 
 class Solution:

@@ -1,3 +1,12 @@
+"""
+Leet code 3Sum Solution
+Time Complexity: O(n^3)
+
+Solution: Check every possible combination
+"""
+
+
+
 class Solution:
     def threeSum(self, nums):
         l = len(nums)

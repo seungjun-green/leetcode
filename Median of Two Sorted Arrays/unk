@@ -1,0 +1,60 @@
+import math
+class Solution:
+    def findMedianSortedArrays(self, nums1, nums2):
+  
+        if len(nums2) == 0:
+            pass
+        elif len(nums1) == 0:
+            nums1 = nums1 + nums2
+        else:
+            start = 0
+            end = len(nums1) - 1
+            for i in range(len(nums2)):
+                    index = self.fi(nums1, nums2[i], start, end)
+                    nums1.insert(index, nums2[i])   
+              
+                
+        result = nums1
+        half = len(result) // 2
+        
+        if len(result) % 2 == 0:
+            return (result[half] + result[half -1]) /2
+        else:
+            return result[half]
+        
+        
+        
+    def fi(self, num1, number, start, end):   
+        
+        if number >= num1[len(num1) - 1]:
+            print("sdsadsadas")
+            return len(num1)
+        elif number <= num1[0]:
+            return 0
+        else:
+            
+            midpoint = math.ceil((start + end) / 2)
+            #same
+            if number == num1[midpoint]:
+                return midpoint
+            
+            #smaller
+            elif number < num1[midpoint]:
+                #perfect
+                if num1[midpoint -1] < number:
+                    return midpoint 
+                else:
+                    #much smaller
+                    
+                    end = midpoint
+                    return self.fi(num1, number, start, end)
+            #bigger
+            else:
+                # perfect
+                if number < num1[midpoint + 1]:
+                    return midpoint + 1
+                else:
+                    start = midpoint
+                    end = len(num1) - 1
+                    return self.fi(num1, number, start, end)   
+        

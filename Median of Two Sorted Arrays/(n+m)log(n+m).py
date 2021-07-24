@@ -1,3 +1,17 @@
+"""
+Leet code Median of Two Sorted Arrays Solution
+Problem Link: https://leetcode.com/problems/median-of-two-sorted-arrays/
+Time Complexity: (n+m)log(n+m), where n and m is the length of two given arrays
+
+Solution:
+first merge two array
+then sort it(using merge sort algorithm)
+then find the median
+        
+"""
+
+
+
 class Solution:
     def findMedianSortedArrays(self, nums1, nums2):
         # first merge two array

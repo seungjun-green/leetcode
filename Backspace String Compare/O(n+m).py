@@ -2,6 +2,8 @@
 Leet code Backspace String Compare Solution
 Problem Link: https://leetcode.com/problems/backspace-string-compare/solution/
 
+Time Complexity: O(n+m)
+Space Complexity: O(n+m)
 Solution: 
 """
 

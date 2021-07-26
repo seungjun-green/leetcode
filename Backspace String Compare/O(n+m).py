@@ -1,3 +1,11 @@
+"""
+Leet code Backspace String Compare Solution
+Problem Link: https://leetcode.com/problems/backspace-string-compare/solution/
+
+Solution: 
+"""
+
+
 class Solution:
     def backspaceCompare(self, s, t):
         s = self.reframe(s)

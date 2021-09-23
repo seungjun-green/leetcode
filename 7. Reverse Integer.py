@@ -3,10 +3,11 @@
 Time Complexity: O(n)
 
 Algroithms
-1. Store the given num in hashmap like following:
-493 => {'0':4, '1':9, '2':3}
-2. do this ' result += value * 10 ** key' iterating hashmap
-3. if result is not in range of [-2^31, 2^31], return 0, otherwsie return the result
+1. If given number(x) is minus, make it plus and set abs to True
+2. Convert the x into string
+3. Iterating the string, do following: result += int(x[i]) * 10 ** i
+4. if abs is True, put the minus again
+5. if result is in 32bit range, return result otherwise return 0
 '''
 
 class Solution:
@@ -15,24 +16,20 @@ class Solution:
         if x < 0:
             abs = True
             x = -x
-            
-        hashmap = {}
-        
-        a = len(str(x))
-        for i in range(a):
-            hashmap[i] = x//(10**(a-i-1))
-            x -= (x//(10**(a-i-1))) * 10 ** (a-i-1)        
-            
-        print(hashmap)
+
         result = 0
-        for i in range(len(hashmap)):
-            result += hashmap[i] * 10 ** i
+        x = str(x)
         
+        a = len(x)
+        for i in range(a):
+            result += int(x[i]) * 10 ** i
+
         if abs:
             result = -result
+        
+        ov = 2**31
             
-        if result > 2**31 or result < -2**31:
+        if result > ov-1 or result < -ov:
             return 0
         else:
-            return result
-  
+            return result  

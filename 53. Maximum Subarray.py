@@ -9,7 +9,7 @@ Algorithm:
 
 class Solution:
     def maxSubArray(self, nums):
-        maxA = -10000
+        maxA = -math.inf
         sumA = 0
         for k in range(1, len(nums)+1):
             for i in range(len(nums)-k+1):

@@ -1,5 +1,7 @@
 '''
 Time Complexity:  O(n^2)
+
+Algorithm:
 1. Get the sum of all possible sub arrays.
 2. keep updating maxA while getting sum of all possible sub arrays
 3. after end of iteration, return maxA

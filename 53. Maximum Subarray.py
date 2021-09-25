@@ -32,14 +32,10 @@ Algorithm - use Kadane's algorithm
 '''
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        pre_max = []
-        max_list = []
-        for i in range(len(nums)):
-            if i == 0:
-                pre_max = [nums[i]]
-                max_list = [nums[i]]
-            if i > 0:
-                pre_max = max(pre_max + [nums[i]], [nums[i]])
+        pre_max = [nums[0]]
+        max_list = [nums[0]]
+        for i in range(1, len(nums)):
+            pre_max = max(pre_max + [nums[i]], [nums[i]])
 
             if sum(pre_max) > sum(max_list):
                 max_list = pre_max.copy()

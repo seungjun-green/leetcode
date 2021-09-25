@@ -16,3 +16,10 @@ class Solution:
         nums1.sort()
         
         
+# Solution - 2/2
+"""
+Time Complexity: O((n+m))
+
+Algorithm
+
+"""

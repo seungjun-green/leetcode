@@ -1,4 +1,6 @@
 '''
+Solution - 1/2
+
 Time Complexity:  O(n^2)
 
 Algorithm:
@@ -18,3 +20,28 @@ class Solution:
                     maxA = sumA
                     
         return maxA
+
+    
+    
+    
+'''
+Solution - 2/2
+Time Complexity: O(n)
+
+Algorithm - use Kadane's algorithm
+'''
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        pre_max = []
+        max_list = []
+        for i in range(len(nums)):
+            if i == 0:
+                pre_max = [nums[i]]
+                max_list = [nums[i]]
+            if i > 0:
+                pre_max = max(pre_max + [nums[i]], [nums[i]])
+
+            if sum(pre_max) > sum(max_list):
+                max_list = pre_max.copy()
+
+        return sum(max_list)

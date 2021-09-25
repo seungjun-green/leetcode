@@ -1,5 +1,5 @@
 
-# Solution - 1/2
+# Solution - 1/3
 """
 Time Complexity: O((n+m) * log(n+m))
 - The cost of sorting a list of length xx using a built-in sorting algorithm is O(x * logx )
@@ -16,7 +16,7 @@ class Solution:
         nums1.sort()
         
         
-# Solution - 2/2
+# Solution - 2/3
 '''
 Time Complexity: O(n+m)
 
@@ -39,3 +39,30 @@ class Solution:
             else:
                 nums1[pw] = nums2[pr2]
                 pr2 += 1
+
+                
+# Solution - 3/3
+'''
+Time Complexity: O(n+m)
+Space Complexity: O(1)
+
+Alogrithm:
+1. We don't have to store coopy of nums1 here.
+2. Iterating from back of the nums2, and nums1[m-1], compare two element and put the bigger element to the nums1 from right to left.
+'''        
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+
+        p1 = m - 1
+        p2 = n - 1
+    
+        for p in range(n + m - 1, -1, -1):
+            if p2 < 0:
+                break
+            if p1 >= 0 and nums1[p1] > nums2[p2]:
+                nums1[p] = nums1[p1]
+                p1 -= 1
+            else:
+                nums1[p] = nums2[p2]
+                p2 -= 1
+                

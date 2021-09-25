@@ -9,8 +9,6 @@ Algorithm
 2. the sort the merged list
 """
 
-
-
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         for i in range(n):

@@ -14,7 +14,7 @@
  '''
  Time Complexity: O(log n)
  
- Algorithm: Binary Search
+ Algorithm: Binary Search                         
  '''
  
  class Solution:

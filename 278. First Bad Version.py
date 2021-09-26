@@ -17,14 +17,22 @@
  Algorithm: Binary Search                         
  '''
  
- class Solution:
+
+
+class Solution:
     def firstBadVersion(self, n):
         start = 1
         end = n
         while start < end:
             mid = (start+end)//2
             if isBadVersion(mid):
+                # bc we are looking for first bad version, include if it is T
                 end = mid
             else:
+                # bc we are looking for first bad version, we don't need to include if it is F already
                 start = mid + 1
         return start
+
+                
+            
+        

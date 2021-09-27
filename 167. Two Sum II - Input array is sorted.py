@@ -26,6 +26,29 @@ class Solution:
    # Solution - 2/2
   
   '''
-  Two pointers
+  Two pointers - this is possible, bc the input array is soorted in ascending order
   
+  Time Complexity: O(n)
+  Space Complexity: O(1)
+  
+  Algorithm
+  1. Set twoo pointer at the first and end of the list
+  2. If 
+  numbers[p1] + numbers[p2] < target: increment p1 by one
+  numbers[p1] + numbers[p2] > target: decrease p2 by one
+  numbers[p1] + numbers[p2] == target: return [p1+1, p2+1] - we add 1 to each element, only bc this problem define first index as 1, not 0
   '''
+
+
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        p1 = 0
+        p2 = len(numbers)-1
+        
+        while p1<p2:
+            if numbers[p1] + numbers[p2] < target:
+                p1+=1
+            elif numbers[p1] + numbers[p2] > target:
+                p2-=1
+            else:
+                return [p1+1, p2+1]

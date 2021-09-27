@@ -26,14 +26,15 @@ class Solution:
    # Solution - 2/2
   
   '''
-  Two pointers - this is possible, bc the input array is soorted in ascending order
+  Two pointers - this is possible, bc the input array is sorted in ascending order
   
   Time Complexity: O(n)
   Space Complexity: O(1)
   
   Algorithm
-  1. Set twoo pointer at the first and end of the list
-  2. If 
+  1. Set two pointer at the first and end of the list
+  2. As the list is already sorted in ascending order
+  If 
   numbers[p1] + numbers[p2] < target: increment p1 by one
   numbers[p1] + numbers[p2] > target: decrease p2 by one
   numbers[p1] + numbers[p2] == target: return [p1+1, p2+1] - we add 1 to each element, only bc this problem define first index as 1, not 0

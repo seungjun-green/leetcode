@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.next = next
 
-# Solution 1/2
+# Solution 1
 '''
 Time Complexity: O(n)
 
@@ -15,16 +15,16 @@ Algorithm:
 '''
 class Solution:
     def removeNthFromEnd(self, head, n):
-        print(head)
-        size = 0
+
+        size = 1
         current_node = head
         
         while current_node.next != None:
             size += 1
             current_node = current_node.next
-        size+=1
-        print(size)
+            
         n = size - n
+        
         if n == 0:
             return head.next
         
@@ -35,5 +35,4 @@ class Solution:
             else:
                 current_node = current_node.next
            
-        print(head)  
         return head

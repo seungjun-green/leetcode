@@ -32,4 +32,22 @@ class Solution:
         return c_node
             
             
+# Solution 2
+
+'''
+Time Complexity: O(n)
+
+Algorithm:
+1.move slow by one node, fast by two node
+2.when fast node or next next of fast reaches the end, slow pointer will be at the middle of the linked list
+3.return linked list from slow node.
+
+'''
+class Solution:
+    def middleNode(self, head):
+        slow = fast = head
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        return slow
             

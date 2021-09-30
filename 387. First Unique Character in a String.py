@@ -1,4 +1,11 @@
 # Solution1
+'''
+Algorithm - same for Sol1 and Sol2
+
+1. Create aa hashamp, element as key and how many time appears as value
+2. iterating the hashmap, if we found the key which it's value is 1, then return the index of the element(key) in the string
+'''
+
 
 class Solution:
     def firstUniqChar(self, s: str) -> int:
@@ -14,7 +21,7 @@ class Solution:
         
         # iterating hashtable, if we found value 0, return the index of the key in the given string
         for key in hashtable:
-            if hashtable[key] == 0:
+            if hashtable[key] == 1:
                 return s.index(key)
         return -1
 

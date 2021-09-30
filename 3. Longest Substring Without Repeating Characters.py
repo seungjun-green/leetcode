@@ -68,3 +68,24 @@ class Solution:
             right += 1
         
         return res
+    
+    
+    
+  # Solution4 -  Advanced Sliding window
+    
+    class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        n = len(s)
+        ans = 0
+        hashtable = {}
+        
+        i = 0
+        
+        for j in range(n):
+            if s[j] in hashtable and i < hashtable[s[j]] + 1:
+                i = hashtable[s[j]] + 1
+                
+            ans = max(ans, j-i+1)
+            hashtable[s[j]] = j
+            
+        return ans

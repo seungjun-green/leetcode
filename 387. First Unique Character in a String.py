@@ -8,7 +8,7 @@ class Solution:
         # value: number of element in the given string
         for i in range(len(s)):
             if s[i] not in hashtable:
-                hashtable[s[i]] = 0
+                hashtable[s[i]] = 1
             else: 
                 hashtable[s[i]] += 1
         

@@ -23,3 +23,19 @@ class Solution:
                 max = len(ss)
         
         return max
+
+    
+    
+ # Solution 2 - Advanced Brute Force Solution
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        max = 0
+        for l in range(1, len(s)+1):
+            for i in range(0, len(s)-l+1):
+                temp = s[i:i+l]
+                t2 = len(temp)
+                if t2 > max and t2 == len(set(temp)):
+                    max = t2
+                    
+        return max

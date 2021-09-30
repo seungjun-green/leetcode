@@ -17,3 +17,19 @@ class Solution:
             if hashtable[key] == 0:
                 return s.index(key)
         return -1
+
+    
+    
+# Solution 2
+# building the hashtable using collections.Counter is much more faster!
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        hashtable = {}   
+        
+        hashtable = collections.Counter(s)
+        
+        for key in hashtable:
+            if hashtable[key] == 1:
+                return s.index(key)
+        return -1

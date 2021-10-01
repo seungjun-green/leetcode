@@ -1,4 +1,11 @@
+
 # Solution 1 - Brute Force
+'''
+Algorithm:
+1. get the length of s1
+2. We create len(s2) - length numbers of substring, checcking whetehr each substring can be permutaion string of s1. If we found one retrun True
+3. If we didn't find any one, return False
+'''
 
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:

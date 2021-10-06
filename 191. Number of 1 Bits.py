@@ -17,7 +17,10 @@ class Solution:
     
     
     
- # Solution 2 - Bit Manipulation  
+ # Solution 2 - Bit Manipulation 
+'''
+ anding the two numbers nn and n - 1n−1 always flips the least significant 11-bit in nn to 00, and keeps all other bits the same.
+'''
 class Solution:
     def hammingWeight(self, n: int) -> int:
         count = 0

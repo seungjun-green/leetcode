@@ -1,5 +1,5 @@
 '''
-Time Complexity: O(n)
+Time Complexity: O(1) - becasue limit of length of num is given in problem, time complexity is O(1) not O(n)
 Algorithm
 
 1.create roman hashmap

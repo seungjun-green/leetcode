@@ -16,3 +16,32 @@ class Solution:
                     result += 1
                 
         return result
+    
+    
+    
+
+    
+# Solution 2 - cumulative sum
+'''
+- Improved Solution1 in a way getting sum of sub array
+- Instead of getting every sum of each sub array we can do:
+sumToElement[j] - sumToElement[i-1] == sum(nums[i:j+1])
+'''
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        sum_list = [0] * (len(nums) + 1)
+        result = 0
+        curr_sum = 0 
+        for i in range(len(nums)):
+            curr_sum += nums[i]
+            sum_list[i+1] = curr_sum
+        
+        temp_sum = 0  # sum of subarray
+        for i in range(0, len(nums)):
+            for j in range(i, len(nums)):
+                temp_sum = sum_list[j+1] - sum_list[i]
+                if temp_sum == k:
+                    result += 1
+                    
+        return result

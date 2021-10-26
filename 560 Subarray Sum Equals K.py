@@ -45,3 +45,30 @@ class Solution:
                     result += 1
                     
         return result
+    
+    
+    
+    
+# Solution3 
+
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        hashmap = {}
+        tempSum = 0
+        count = 0
+        for i in range(len(nums)):
+            tempSum += nums[i]
+            
+            if tempSum-k in hashmap:
+                count += hashmap[tempSum-k]
+                
+            if tempSum in hashmap:
+                hashmap[tempSum] += 1
+            else:
+                hashmap[tempSum] = 1
+            
+            if tempSum == k:
+                count += 1
+            
+            
+        return count

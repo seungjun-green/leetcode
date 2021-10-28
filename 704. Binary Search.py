@@ -16,7 +16,7 @@ class Solution:
 
     
     
-# Solution 2c-cusing recursion
+# Solution 2 - using recursion
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:

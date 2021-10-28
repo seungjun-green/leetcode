@@ -6,9 +6,11 @@
  '''
   class Solution:
     def firstBadVersion(self, n):
-        for i in range(1, n+1):
-            if isBadVersion(i):
+        for i in range(n):
+            if isBadVersion(i) == True:
                 return i
+            
+        return n
 
 # Solution 2
  '''

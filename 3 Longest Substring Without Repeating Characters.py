@@ -3,8 +3,8 @@
 '''
 Algorithm:
 1. Create a new list
-2. Create all possible sub strings and append it as an element of newly created list
-3. iterating the list, check wheteher the string consist of only unique alphabet, if it is then check len of it, and if is bigger than current max,  update the value of max
+2. Create all possible substrings and append them to the newly created list
+3. iterating the list, check whether the element(substring) consists of the unique alphabet. If it is check the length of it, and if it is bigger than the current max value,  update the value of maxValue
 4. return max
 '''
 

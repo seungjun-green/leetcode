@@ -10,18 +10,14 @@ Algorithm:
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        subs = []
-        for l in range(1, len(s)+1):
-            for i in range(0, len(s)-l+1):
-                subs.append(s[i:i+l])
-        
         max = 0
-        for ss in subs:
-            if len(ss) != len(set(ss)):
-                continue
-            if len(ss) == len(set(ss)) and len(ss) > max:
-                max = len(ss)
-        
+        for i in range(0, len(s)+1):
+            for j in range(i, len(s)+1):
+                temp = s[i:j+1]
+                t2 = len(temp)
+                if t2 > max and t2 == len(set(temp)):
+                    max = t2
+                    
         return max
 
     

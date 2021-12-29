@@ -30,29 +30,51 @@ class Solution:
       
 # Solution 2 - sliding window
 
+
+'''
+1. Set left and right to 0
+2. iterating the string, check whether current substring doesn't have any duplicates, update maxValue. 
+If it is, increment left by 1, until condition becomes true.
+3. After iteration ended, updatemaxValue.
+'''
+
+
+#TIP
+# We improved time complexity of Solution 2 by not iterating every key values in hashmap, but checking only value of s[i]. 
+# Because we already know values of other keys are smaller or equal to 1, and only value of s[i] is bigger than 1.
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        chars = [0] * 128
-        
-        left = right = 0
-        
-        res = 0
-        
-        
-        while right < len(s):
-            r = s[right]
-            chars[ord(r)] += 1
+        left, right = 0, 0
+        maxValue = 0
+        hashmap = {}
+
+
+        def condition(hashmap, key):
+            if hashmap[key] > 1:
+                return False
+            else:
+                return True
+
             
-            while chars[ord(r)] > 1:
-                l = s[left]
-                chars[ord(l)] -= 1
-                left += 1
+        for i in range(len(s)):
+            # update hashmap
+            if s[i] in hashmap:
+                hashmap[s[i]] += 1
+            else:
+                hashmap[s[i]] = 1
+                    
+            if condition(hashmap, s[i]):
+                maxValue = max(maxValue, right-left+1)
+            else:
+                while condition(hashmap, s[i]) == False:
+                    hashmap[s[left]] -= 1            
+                    left += 1 
+                       
                 
-            res = max(res, right-left+1)
-            
-            right += 1
-        
-        return res
+            right += 1      
+    
+        return maxValue
     
     
     

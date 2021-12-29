@@ -8,6 +8,11 @@ Algorithm:
 4. return max
 '''
 
+
+# TIP
+# We improved Solution-1 by updating maxVlaue while creating all possible sub-strings. 
+# In common way, we could have created list of all possible substring - O(n^2), then iterate the list again updating maxValue - O(n)
+
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         max = 0

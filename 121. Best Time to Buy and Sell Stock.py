@@ -21,7 +21,7 @@ class Solution:
 # Solution - 2/2
 '''
 Time Complexity: O(n)
-Algorithm: use SJ'S Algorithm
+Algorithm: use SJ'S Algorithm[MDS]
 '''    
 
 import math

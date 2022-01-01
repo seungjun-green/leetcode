@@ -17,6 +17,7 @@ class Solution:
         temp = []
         answer = []
         
+        # ireshape operation with given parameters is not possible return original matrix.
         if r*c != len(nums):
             return mat
         

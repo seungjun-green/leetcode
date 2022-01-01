@@ -21,23 +21,26 @@ class Solution:
 # Solution - 2/2
 '''
 Time Complexity: O(n)
+Algorithm: use SJ'S Algorithm
 '''    
 
-
+import math
 class Solution:
-    def maxProfit(self, prices):
-        minPrice = 999999999
-        maxProfit = 0
-        for dayPrice in prices:
-            if dayPrice < minPrice:
-                minPrice = dayPrice
-            if maxProfit < dayPrice - minPrice:
-                maxProfit = dayPrice - minPrice
-                
-                
-        return maxProfit
+    def maxProfit(self, prices: List[int]) -> int:
+        global_min = prices[0]
+        current_max = 0
+        global_max = -math.inf
+        
+        for i in range(1, len(prices)):
+            current_max = prices[i] - global_min
+            global_max = max(global_max, current_max)
+            global_min = min(global_min, prices[i])
     
-    
+        
+        if global_max > 0:
+            return global_max
+        else:
+            return 0
     
     
     

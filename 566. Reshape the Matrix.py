@@ -2,30 +2,31 @@
 Time Complexity: O(m*n)
 
 Algorithm 
-1. Convert given matrix into sinle list
-2. Slicing the list by given K numbers make it as a row, make a new matrix
+1. Convert the given matrix into single list
+2. Create a new matrix with R number of lists with C number of elements in it.
 '''
 
 class Solution:
-    def matrixReshape(self, mat, r: int, c: int):
-        result = []
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        nums = []
+        # converting given matrix into a single list
+        for array in mat:
+            for element in array:
+                nums.append(element)
+        
+        temp = []
         answer = []
-    
         
-        for i in range(len(mat)):
-            for j in range(len(mat[0])):
-                result.append(mat[i][j])
-        print(result)
-        
-        if r*c != len(result):
+        if r*c != len(nums):
             return mat
         
-        subarray = []
-        for i in range(len(result)):
-            subarray.append(result[i])
+        # creating a new matrix with the single list
+        for i in range(r):
+            for j in range(c):
+                temp.append(nums[i*c+j])
             
-            if (i+1)%c == 0:
-                answer.append(subarray)
-                subarray = []
-                
+            answer.append(temp)
+            temp = []
+        
+        
         return answer

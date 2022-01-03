@@ -1,9 +1,28 @@
+#Solution1
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        hashmap1 = collections.Counter(ransomNote)
+        hashmap2 = collections.Counter(magazine)
+        
+        for key in hashmap1:
+            if (key not in hashmap2) or key in hashmap2 and hashmap2[key] < hashmap1[key]:
+                return False
+        
+        return True
+
+
+
+
+
+
+#TIP
 '''
-Algorithm:
-1. create a hashmap, element as a key and how many time it appears as value, iterating string magazine
-2. iterating ransomeNote, if the element does not exist or it's value is 0 return False, other then(if it exist in the hashmap) decrease the value by one
+You don't need to create two hashmaps for rasnomeNote and magazine. Just create one hashmap for magazine(key as character, value as numer of appearance).
+Iterating the hashmap, check the condition. 
 '''
 
+#Soultion2
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         hashtable = {}

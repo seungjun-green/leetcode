@@ -1,4 +1,9 @@
 #Solution1
+'''
+Algoiruthm:
+1. create two hashmaps for ransomeNote and magazine.
+2. iterating hashmap1 check the condition.
+'''
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         hashmap1 = collections.Counter(ransomNote)
